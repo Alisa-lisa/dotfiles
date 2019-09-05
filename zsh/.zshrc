@@ -81,4 +81,5 @@ zstyle ':completion:*:history-words' menu yes
 # fzf
 source /usr/share/fzf/key-bindings.zsh   # better reverse search
 
+alias e='exa -la'
 alias ls='ls --color=auto'
