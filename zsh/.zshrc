@@ -1,3 +1,4 @@
+# zplug stuff
 zstyle ':prezto:module:terminal' auto-title 'yes'
 
 source "$HOME/.zplug/init.zsh"
@@ -9,6 +10,7 @@ zplug "zsh-users/zsh-completions", use:src
 zplug "modules/terminal", from:prezto
 zplug load
 
+# General configuration
 autoload -U compinit && compinit
 autoload -U promptinit && promptinit
 
@@ -24,9 +26,10 @@ bindkey ';5C' emacs-forward-word
 bindkey '^[[3~' delete-char
 bindkey '^[3;5~' delete-char
 
+
 # History
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
+HISTSIZE=100000
 SAVEHIST=$HISTSIZE
 setopt inc_append_history   # write to history immediately
 setopt hist_ignore_dups     # ignore second instance of same event
@@ -35,7 +38,10 @@ setopt extended_history     # special history format with timestamp
 setopt no_hist_beep         # fucking beep
 setopt hist_ignore_space    # ignore entries with leading space
 
+
 # Completion
+
+setopt complete_in_word     # complete from both ends of a word
 setopt always_to_end        # move cursor to the end of a completed word
 setopt path_dirs            # perform path search even on command names with slashes
 setopt auto_menu            # show completion menu on a succesive tab press
@@ -58,6 +64,7 @@ zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
+zstyle ':completion:*' rehash true  # Find new commands automatically
 
 ## Fuzzy match mistyped completions.
 zstyle ':completion:*' completer _complete _match _approximate
@@ -80,6 +87,7 @@ zstyle ':completion:*:history-words' menu yes
 
 # fzf
 source /usr/share/fzf/key-bindings.zsh   # better reverse search
+
 
 alias e='exa -la'
 alias ls='ls --color=auto'
