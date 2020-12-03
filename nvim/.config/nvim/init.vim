@@ -4,7 +4,26 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 
+Plug 'bling/vim-airline'
+Plug 'flazz/vim-colorschemes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
+Plug 'tomtom/tcomment_vim'
+Plug 'Valloric/MatchTagAlways'
+
 call plug#end()
+
+set termguicolors 	" true color
+colorscheme gruvbox
+set number 		" line numbers
+
+set mouse=a
+set cursorcolumn
+set cursorline
+
+set noswapfile
+set shortmess+=I
 
 " set leader timeout
 let mapleader=","
