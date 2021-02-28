@@ -15,6 +15,7 @@ Plug 'Valloric/MatchTagAlways'
 call plug#end()
 
 set termguicolors 	" true color
+set spell spelllang=en_us
 colorscheme gruvbox
 set number 		" line numbers
 

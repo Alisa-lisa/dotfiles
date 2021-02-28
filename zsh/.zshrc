@@ -91,3 +91,5 @@ source /usr/share/fzf/key-bindings.zsh   # better reverse search
 
 alias e='exa -la'
 alias ls='ls --color=auto'
+
+export PATH="$HOME/.poetry/bin:$PATH"
