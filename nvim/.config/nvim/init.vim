@@ -91,6 +91,11 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
+" NERDTree commands
+autocmd VimEnter * NERDTree
+nnoremap <leader> n :NERDTreeFocus <CR>
+nnoremap <leader> t :NERDTreeToggle <CR>
+
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
