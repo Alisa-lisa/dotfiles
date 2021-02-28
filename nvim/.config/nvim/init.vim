@@ -11,6 +11,7 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'Valloric/MatchTagAlways'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
