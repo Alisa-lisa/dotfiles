@@ -43,7 +43,7 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # custom shortcuts
-bindsym $mod+c exec chromium
+bindsym $mod+c exec firefox 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym $mod+p exec pychram
