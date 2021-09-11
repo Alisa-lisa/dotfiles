@@ -1,5 +1,6 @@
 {
 	"python.jediEnabled": false,
 	"rust-analyzer.serverPath": "/usr/bin/rust-analyzer",
-	"rust-analyzer.lens.methodReferences": true
+	"rust-analyzer.lens.methodReferences": true,
+	"coc.preference.formatOnSaveFiletyps": ["dart"]
 }

@@ -3,7 +3,13 @@ call plug#begin(expand('~/.config/nvim/plug/'))
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
-
+Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
+Plug 'rust-lang/rust.vim'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
+Plug 'thosakwe/vim-flutter'
+Plug 'Chiel92/vim-autoformat'
 Plug 'bling/vim-airline'
 Plug 'flazz/vim-colorschemes'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -14,6 +20,15 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'preservim/nerdtree'
 
 call plug#end()
+
+syntax on
+" tabs/spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set smarttab
+set backspace=2
 
 set termguicolors 	" true color
 set spell spelllang=en_us
@@ -88,6 +103,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Coc dart "
+xmap <leader>d <Plug>(coc-codeaction-selected))
+nmap <leader>d <Plug>(coc-codeaction-selected))
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -95,6 +114,7 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 autocmd VimEnter * NERDTree
 nnoremap <leader> n :NERDTreeFocus <CR>
 nnoremap <leader> t :NERDTreeToggle <CR>
+let NERDTreeShowHidden=1
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
