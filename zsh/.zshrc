@@ -88,12 +88,6 @@ zstyle ':completion:*:history-words' menu yes
 # fzf
 source /usr/share/fzf/key-bindings.zsh   # better reverse search
 
-
-alias e='exa -la'
-alias ls='ls --color=auto'
-
-export PATH="$HOME/.poetry/bin:$PATH"
-export PYTHONDONTWRITEBYTECODE=1
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
-export PATH=$JAVA_HOME/bin:$PATH 
+# custom settings
+source /home/alisa/.shell-extend
 
