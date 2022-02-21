@@ -18,6 +18,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'preservim/nerdtree'
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
@@ -66,6 +67,8 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
+# async c# server communication
+let g:OmniSharp_server_stdio = 0
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
