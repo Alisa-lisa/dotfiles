@@ -19,6 +19,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'Valloric/MatchTagAlways'
 Plug 'preservim/nerdtree'
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'NoahTheDuke/vim-just'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -68,7 +71,7 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 # async c# server communication
-let g:OmniSharp_server_stdio = 0
+" set OmniSharp_server_stdio = 0
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

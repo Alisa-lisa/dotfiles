@@ -90,4 +90,3 @@ source /usr/share/fzf/key-bindings.zsh   # better reverse search
 
 # custom settings
 source /home/alisa/.shell-extend
-
