@@ -163,3 +163,4 @@ bindsym $mod+Shift+l mode "$mode_system"
 
 exec --no-startup-id feh --bg-max --randomize ~/wallpaper/*
 exec --no-startup-id nm-applet --no-agent --indicator
+exec --no-startup-id dunst

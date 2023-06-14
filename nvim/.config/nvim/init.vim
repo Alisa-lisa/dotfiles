@@ -2,10 +2,12 @@ call plug#begin(expand('~/.config/nvim/plug/'))
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 Plug 'iamcco/coc-flutter', {'do': 'yarn install --frozen-lockfile'}
 Plug 'rust-lang/rust.vim'
 Plug 'dart-lang/dart-vim-plugin'
+Plug 'natebosch/vim-lsc'
+Plug 'natebosch/vim-lsc-dart'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'nginx/nginx', {'rtp': 'contrib/vim'}
 Plug 'thosakwe/vim-flutter'
@@ -22,6 +24,7 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'NoahTheDuke/vim-just'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -70,22 +73,25 @@ set shortmess+=c
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
-# async c# server communication
-" set OmniSharp_server_stdio = 0
+
+autocmd BufNewFile,BufRead *.tf,*.tfvars set filetype=terraform
+autocmd BufWritePre *.rs :Autoformat
+autocmd BufWritePre *.tf,*.tfvars :Autoformat
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -115,6 +121,7 @@ nmap <leader>d <Plug>(coc-codeaction-selected))
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
 
 " NERDTree commands
 autocmd VimEnter * NERDTree

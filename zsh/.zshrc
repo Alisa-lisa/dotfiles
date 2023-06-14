@@ -90,3 +90,8 @@ source /usr/share/fzf/key-bindings.zsh   # better reverse search
 
 # custom settings
 source /home/alisa/.shell-extend
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
