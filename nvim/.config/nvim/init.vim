@@ -74,6 +74,10 @@ set shortmess+=c
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
+" Flutter plugin setting
+let g:flutter_show_log_on_run="hidden"
+let g:flutter_show_log_on_attach="hidden"
+
 autocmd BufNewFile,BufRead *.tf,*.tfvars set filetype=terraform
 autocmd BufWritePre *.rs :Autoformat
 autocmd BufWritePre *.tf,*.tfvars :Autoformat
@@ -203,3 +207,5 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+let g:python3_host_prog = '/usr/bin/python3'
