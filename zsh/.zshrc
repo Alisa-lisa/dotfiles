@@ -1,14 +1,5 @@
-# zplug stuff
-zstyle ':prezto:module:terminal' auto-title 'yes'
-
-source "$HOME/.zplug/init.zsh"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "plugins/colored-man-pages", from:oh-my-zsh
-zplug "nojhan/liquidprompt"
-zplug "chrissicool/zsh-256color"
-zplug "zsh-users/zsh-completions", use:src
-zplug "modules/terminal", from:prezto
-zplug load
+# sheldon downloaded plugins
+eval "$(sheldon source)"
 
 # General configuration
 autoload -U compinit && compinit
@@ -98,3 +89,5 @@ source /home/alisa/.shell-extend
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+. "$HOME/.local/bin/env"
